@@ -12,7 +12,7 @@
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1206.4</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>9.729e-6</momentConstant>
+      <momentConstant>0.016</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorNumber>0</motorNumber>
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
@@ -28,7 +28,7 @@
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1206.4</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>9.729e-6</momentConstant>
+      <momentConstant>0.016</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorNumber>1</motorNumber>
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
@@ -44,7 +44,7 @@
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1206.4</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>9.729e-6</momentConstant>
+      <momentConstant>0.016</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorNumber>2</motorNumber>
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
