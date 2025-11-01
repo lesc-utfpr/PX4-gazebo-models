@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
   <model name='piazinho_base'>
-    <pose>0 0 0.24 0 0 0</pose>
+    <pose>0 0 -0.24 0 0 0</pose>
     <self_collide>false</self_collide>
     <static>false</static>
     <link name="base_link">
       <inertial>
         <mass>2.35</mass>
         <inertia>
-          <ixx>0.02166666666666667</ixx>
+          <ixx>0.022</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.02166666666666667</iyy>
+          <iyy>0.03</iyy>
           <iyz>0</iyz>
-          <izz>0.04000000000000001</izz>
+          <izz>0.024</izz>
         </inertia>
       </inertial>
       <gravity>true</gravity>
