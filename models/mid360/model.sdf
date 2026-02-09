@@ -55,15 +55,14 @@
         <!--<pose>0 0 0.0204789 0 0 0</pose>-->
         <plugin filename="libRGLServerPluginInstance.so" name="rgl::RGLServerPluginInstance">
           <range>
-            <min>0.1</min> <!-- questionable-->
-            <max>100</max> <!-- questionable-->
+            100 <!-- questionable-->
           </range>
           <update_rate>50</update_rate> <!-- questionable-->
           <update_on_paused_sim>false</update_on_paused_sim>
           <topic>/livox/lidar</topic>
           <frame>livox_lidar</frame>
           <!--<do_ignore_entities_in_lidar_link>true</do_ignore_entities_in_lidar_link>-->
-          <pattern_preset>Livox Mid360</pattern_preset>
+          <pattern_preset_path>/home/victor/workspace/src/gralha-sim/gz-models/lidar_patterns/LivoxMid360.mat3x4f</pattern_preset_path>
         </plugin>
       </sensor>
     </link>
