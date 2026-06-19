@@ -140,7 +140,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -204,7 +204,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -268,12 +268,12 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
           </mesh>
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Indigo</name>
+            <name>Gazebo/White</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -332,7 +332,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
           </mesh>
         </geometry>
         <material>
