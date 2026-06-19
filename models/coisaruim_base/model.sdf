@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
   <model name='coisaruim_base'>
-    <pose>0 0 0.09 0 0 0</pose>
+    <pose>0 0 0.083 0 0 0</pose>
     <self_collide>false</self_collide>
     <static>false</static>
     <link name="base_link">
@@ -19,7 +19,7 @@
       <gravity>true</gravity>
       <velocity_decay/>
       <visual name="base_link_visual">
-        <pose>0 0 0.005 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -28,7 +28,7 @@
         </geometry>
       </visual>
       <collision name="base_link_collision">
-        <pose>0 0 0.005 0 0 -1.5707</pose>
+        <pose>0 0 0 1.5707 0 -1.5707</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -140,7 +140,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -204,7 +204,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -268,7 +268,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CCW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -332,7 +332,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://coisaruim_base/meshes/7040_prop_CCW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
           </mesh>
         </geometry>
         <material>
