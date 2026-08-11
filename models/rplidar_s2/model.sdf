@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="rplidar_s2">
+    <pose>0 0 0 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <static>false</static>
+
+    <link name="rplidar_s2/base_link">
+
+      <inertial>
+        <pose>0 0 0.0202 0 0 0</pose>
+        <mass>0.135</mass>
+        <inertia>
+          <ixx>0.00005401</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00005401</iyy>
+          <iyz>0</iyz>
+          <izz>0.00007130</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="rplidar_s2_visual">
+        <pose>0 0 0.0202 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0325</radius>
+            <length>0.0404</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <diffuse>0.08 0.08 0.08 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <collision name="rplidar_s2_collision">
+        <pose>0 0 0.0202 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0325</radius>
+            <length>0.0404</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <!--
+        RPLIDAR S2 2D scan, implemented with gz sim's native gpu_lidar sensor.
+        No custom plugin is needed here (unlike the Livox Mid360, which relies on
+        RGLServerPluginInstance for its non-repetitive scan pattern); gpu_lidar
+        already produces gz.msgs.LaserScan, which ros_gz_bridge maps directly to
+        sensor_msgs/msg/LaserScan.
+
+        Reference specs (Slamtec RPLIDAR S2):
+          - 360 deg horizontal FOV, single scan plane (2D)
+          - range: 0.05 m - 30 m
+          - sample rate: 32 kHz -> 2400 samples/rev @ 10 Hz keeps ~0.15 deg resolution
+          - scan rate: 10 Hz default (hardware supports up to 32 Hz)
+      -->
+      <sensor name="rplidar_s2_sensor" type="gpu_lidar">
+        <pose>0 0 0.0404 0 0 0</pose>
+        <topic>scan</topic>
+        <!--
+          Pinned explicitly so LaserScan.header.frame_id always matches the
+          static TF published in piazinho_rplidar.launch.py, regardless of
+          how the sensor's scoped name changes once merge='true' flattens
+          this sub-model into piazinho_rplidar. Mirrors how mid360 pins its
+          frame via <frame>livox_lidar</frame> on the RGL plugin.
+        -->
+        <gz_frame_id>rplidar_s2/base_link</gz_frame_id>
+        <update_rate>10</update_rate>
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>2400</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.141592653589793</min_angle>
+              <max_angle>3.141592653589793</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.05</min>
+            <max>30.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </lidar>
+      </sensor>
+
+      <gravity>true</gravity>
+      <velocity_decay/>
+
+    </link>
+  </model>
+</sdf>
