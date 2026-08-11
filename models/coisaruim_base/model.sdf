@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
-  <model name='piazinho_base'>
-    <pose>0 0 0.24 0 0 0</pose>
+  <model name='coisaruim_base'>
+    <pose>0 0 0.083 0 0 0</pose>
     <self_collide>false</self_collide>
     <static>false</static>
     <link name="base_link">
@@ -19,20 +19,20 @@
       <gravity>true</gravity>
       <velocity_decay/>
       <visual name="base_link_visual">
-        <pose>0 0 0.005 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/Piazinho.dae</uri>
+            <uri>model://coisaruim_base/meshes/CoisaRuim.dae</uri>
           </mesh>
         </geometry>
       </visual>
       <collision name="base_link_collision">
-        <pose>0 0 0.005 0 0 0</pose>
+        <pose>0 0 0 1.5707 0 -1.5707</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/Piazinho_Collision.stl</uri>
+            <uri>model://coisaruim_base/meshes/CoisaRuim_Collision.obj</uri>
           </mesh>
         </geometry>
         <surface>
@@ -119,90 +119,14 @@
       </sensor>
       <sensor name="navsat_sensor" type="navsat">
         <always_on>1</always_on>
-        <update_rate>10</update_rate>
-        <navsat>
-          <position_sensing>
-            <horizontal>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.00001</stddev> 
-              </noise>
-            </horizontal>
-            <vertical>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.1</stddev> 
-              </noise>
-            </vertical>
-          </position_sensing>
-          <velocity_sensing>
-            <horizontal>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.000001</stddev> 
-              </noise>
-            </horizontal>
-            <vertical>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.05</stddev> 
-              </noise>
-            </vertical>
-          </velocity_sensing>
-        </navsat>
-      </sensor>
-      
-    </link>
-
-    <link name="lidar_sensor_link">
-      <pose>0 0 -0.05 0 1.5708 0</pose> 
-      <inertial>
-        <mass>0.01</mass>
-        <inertia>
-          <ixx>0.00001</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00001</iyy>
-          <iyz>0</iyz>
-          <izz>0.00001</izz>
-        </inertia>
-      </inertial>
-      <sensor name="lidar" type="gpu_lidar">
-        <always_on>true</always_on>
-        <update_rate>50</update_rate>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>1</samples>
-              <resolution>1</resolution>
-              <min_angle>0</min_angle>
-              <max_angle>0</max_angle>
-            </horizontal>
-          </scan>
-          <range>
-            <min>0.10</min>
-            <max>40.0</max>
-            <resolution>0.01</resolution>
-          </range>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.01</stddev>
-          </noise>
-        </ray>
+        <update_rate>30</update_rate>
       </sensor>
     </link>
-
-    <joint name="lidar_joint" type="fixed">
-      <parent>base_link</parent>
-      <child>lidar_sensor_link</child>
-    </joint>
-    
     <link name="rotor_0">
       <gravity>true</gravity>
       <self_collide>false</self_collide>
       <velocity_decay/>
-      <pose>0.169826 -0.168623 0.282644 0 0 0</pose>
+      <pose>-0.097077 0.1108 0.015857 0 0 0</pose>
       <inertial>
           <mass>0.016076923076923075</mass>
           <inertia>
@@ -212,16 +136,16 @@
           </inertia>
         </inertial>
       <visual name="rotor_0_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 1.5707 0 -1.5707</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/1045_prop_CCW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
           </mesh>
         </geometry>
         <material>
           <script>
-            <name>Gazebo/DarkGrey</name>
+            <name>Gazebo/Indigo</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -231,7 +155,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/Prop_Collision.stl</uri>
+            <uri>model://coisaruim_base/meshes/7inProp_Collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -266,7 +190,7 @@
       <gravity>true</gravity>
       <self_collide>false</self_collide>
       <velocity_decay/>
-      <pose>-0.1717 0.172902 0.282644 0 0 0</pose>
+      <pose>0.097077 -0.110699 0.015857 0 0 0</pose>
       <inertial>
           <mass>0.016076923076923075</mass>
           <inertia>
@@ -276,16 +200,16 @@
           </inertia>
         </inertial>
       <visual name="rotor_1_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 1.5707 0 -1.5707</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/1045_prop_CCW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CCW.obj</uri>
           </mesh>
         </geometry>
         <material>
           <script>
-            <name>Gazebo/DarkGrey</name>
+            <name>Gazebo/Indigo</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -295,7 +219,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/Prop_Collision.stl</uri>
+            <uri>model://coisaruim_base/meshes/7inProp_Collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -330,7 +254,7 @@
       <gravity>true</gravity>
       <self_collide>false</self_collide>
       <velocity_decay/>
-      <pose>0.169826 0.172902 0.282644 0 0 0</pose>
+      <pose>0.097077 0.1108 0.015857 0 0 0</pose>
       <inertial>
           <mass>0.016076923076923075</mass>
           <inertia>
@@ -340,16 +264,16 @@
           </inertia>
         </inertial>
       <visual name="rotor_2_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 1.5707 0 -1.5707</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/1045_prop_CW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
           </mesh>
         </geometry>
         <material>
           <script>
-            <name>Gazebo/DarkGrey</name>
+            <name>Gazebo/White</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -359,7 +283,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/Prop_Collision.stl</uri>
+            <uri>model://coisaruim_base/meshes/7inProp_Collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -394,7 +318,7 @@
       <gravity>true</gravity>
       <self_collide>false</self_collide>
       <velocity_decay/>
-      <pose>-0.1717 -0.168623 0.282644 0 0 0</pose>
+      <pose>-0.097077 -0.110699 0.015857 0 0 0</pose>
       <inertial>
           <mass>0.016076923076923075</mass>
           <inertia>
@@ -404,16 +328,16 @@
           </inertia>
         </inertial>
       <visual name="rotor_3_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 1.5707 0 -1.5707</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/1045_prop_CW.stl</uri>
+            <uri>model://coisaruim_base/meshes/7040_prop_CW.obj</uri>
           </mesh>
         </geometry>
         <material>
           <script>
-            <name>Gazebo/DarkGrey</name>
+            <name>Gazebo/Indigo</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -423,7 +347,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://piazinho_base/meshes/Prop_Collision.stl</uri>
+            <uri>model://coisaruim_base/meshes/7inProp_Collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -454,7 +378,16 @@
         </dynamics>
       </axis>
     </joint>
-
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+        <odom_frame>odom</odom_frame>
+        <robot_base_frame>base_link</robot_base_frame>
+        <odom_publish_frequency>50</odom_publish_frequency>
+        <dimensions>3</dimensions>
+        
+        <odom_topic>/model/coisaruim_mid360_range_cam_0/odometry</odom_topic>
+        <odom_covariance_topic>/model/coisaruim_mid360_range_cam_0/ignored_gt_covariance</odom_covariance_topic>
+    </plugin>
+<!--
     <model name="payload_model">
       <pose relative_to="base_link">0.119381 -0.021485 0.169178 0 0 0</pose>
       <link name="payload_hook">
@@ -465,8 +398,8 @@
             <iyy>0.001</iyy><iyz>0</iyz><izz>0.001</izz>
           </inertia>
         </inertial>
-        
-        <!-- VISUAL -->
+
+         VISUAL
         <visual name="hook_visual">
           <pose>0 0 0 0 0 0</pose>
           <geometry>
@@ -476,7 +409,7 @@
             </mesh>
           </geometry>
         </visual>
-        
+
         <collision name="hook_collision">
           <pose>0 0 0 0 0 0</pose>
           <geometry>
@@ -501,15 +434,6 @@
           </surface>
         </collision>
       </link>
-      <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
-        <odom_frame>odom</odom_frame>
-        <robot_base_frame>base_link</robot_base_frame>
-        <odom_publish_frequency>50</odom_publish_frequency>
-        <dimensions>3</dimensions>
-        
-        <odom_topic>/model/piazinho_mid360_cam_0/odometry</odom_topic>
-        
-      </plugin>
     </model>
 
     <plugin filename="gz-sim-detachable-joint-system" name="gz::sim::systems::DetachableJoint">
@@ -518,6 +442,6 @@
       <child_link>payload_hook</child_link>
       <detach_topic>/sim/hook</detach_topic>
     </plugin>
-    
+-->
   </model>
 </sdf>
