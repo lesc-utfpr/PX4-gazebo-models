@@ -2,7 +2,7 @@
 <sdf version='1.9'>
   <model name='coisaruim_mono_cam'>
     <include merge='true'>
-      <uri>piazinho</uri>
+      <uri>coisaruim</uri>
     </include>
     <include merge='true'>
       <uri>model://mono_cam</uri>
