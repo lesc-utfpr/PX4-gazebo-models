@@ -5,7 +5,7 @@
       <uri>piazinho</uri>
     </include>
     <include merge='true'>
-      <uri>model://rplidar_s2</uri>
+      <uri>model://rplidar_a3m1</uri>
       <!--
         Mounted low, at body height (well below the rotor plane at ~0.283m),
         so the 360 deg horizontal scan ring isn't clipped by the propellers
@@ -16,7 +16,7 @@
     </include>
     <joint name="LidarJoint" type="fixed">
       <parent>base_link</parent>
-      <child>rplidar_s2/base_link</child>
+      <child>rplidar_a3m1/base_link</child>
     </joint>
   </model>
 </sdf>
