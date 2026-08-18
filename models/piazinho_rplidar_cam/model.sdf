@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='piazinho_rplidar'>
+    <include merge='true'>
+      <uri>piazinho</uri>
+    </include>
+    <include merge='true'>
+      <uri>model://rplidar_s2</uri>
+      <!--
+        Mounted low, at body height (well below the rotor plane at ~0.283m),
+        so the 360 deg horizontal scan ring isn't clipped by the propellers
+        or landing gear. Adjust here if the airframe geometry changes, and
+        keep the static TF in piazinho_rplidar.launch.py in sync if you do.
+      -->
+      <pose relative_to="base_link">0 0 0.3 0 0 0</pose>
+    </include>
+    <joint name="LidarJoint" type="fixed">
+      <parent>base_link</parent>
+      <child>rplidar_s2/base_link</child>
+    </joint>
+  </model>
+</sdf>
