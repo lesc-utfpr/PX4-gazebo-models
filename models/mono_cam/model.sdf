@@ -20,6 +20,20 @@
         </inertia>
       </inertial>
 
+      <visual name="mono_cam/visual">
+        <pose>0.03 0 0.025 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.06 0.04 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.18 0.18 0.18 1</ambient>
+          <diffuse>0.18 0.18 0.18 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+        </material>
+      </visual>
+
       <sensor name="imager" type="camera">
         <pose>0 0 0 0 0 0</pose>
 
