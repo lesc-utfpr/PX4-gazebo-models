@@ -12,7 +12,7 @@
         or landing gear. Adjust here if the airframe geometry changes, and
         keep the static TF in piazinho_rplidar.launch.py in sync if you do.
       -->
-      <pose relative_to="base_link">0 0 0.05 0 0 0</pose>
+      <pose relative_to="base_link">0 0 0.3 0 0 0</pose>
     </include>
     <joint name="LidarJoint" type="fixed">
       <parent>base_link</parent>
