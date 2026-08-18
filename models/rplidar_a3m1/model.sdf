@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version="1.9">
-  <model name="rplidar_s2">
+  <model name="rplidar_a3m1">
     <pose>0 0 0 0 0 0</pose>
     <self_collide>false</self_collide>
     <static>false</static>
 
-    <link name="rplidar_s2/base_link">
+    <link name="rplidar_a3m1/base_link">
 
       <inertial>
-        <pose>0 0 0.0202 0 0 0</pose>
-        <mass>0.135</mass>
+        <pose>0 0 0.0265 0 0 0</pose>
+        <mass>0.190</mass>
         <inertia>
-          <ixx>0.00005401</ixx>
+          <ixx>0.00016323</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00005401</iyy>
+          <iyy>0.00016323</iyy>
           <iyz>0</iyz>
-          <izz>0.00007130</izz>
+          <izz>0.00023750</izz>
         </inertia>
       </inertial>
 
-      <visual name="rplidar_s2_visual">
-        <pose>0 0 0.0202 0 0 0</pose>
+      <visual name="rplidar_a3m1_visual">
+        <pose>0 0 0.0265 0 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.0325</radius>
-            <length>0.0404</length>
+            <radius>0.05</radius>
+            <length>0.053</length>
           </cylinder>
         </geometry>
         <material>
@@ -35,38 +35,40 @@
         </material>
       </visual>
 
-      <collision name="rplidar_s2_collision">
-        <pose>0 0 0.0202 0 0 0</pose>
+      <collision name="rplidar_a3m1_collision">
+        <pose>0 0 0.0265 0 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.0325</radius>
-            <length>0.0404</length>
+            <radius>0.05</radius>
+            <length>0.053</length>
           </cylinder>
         </geometry>
       </collision>
 
       <!--
-        RPLIDAR S2 2D scan, implemented with gz sim's native gpu_lidar sensor.
+        RPLIDAR A3M1 2D scan, implemented with gz sim's native gpu_lidar sensor.
         No custom plugin is needed here (unlike the Livox Mid360, which relies on
         RGLServerPluginInstance for its non-repetitive scan pattern); gpu_lidar
         already produces gz.msgs.LaserScan, which ros_gz_bridge maps directly to
         sensor_msgs/msg/LaserScan.
 
-        Reference specs (Slamtec RPLIDAR S2):
+        Reference specs (Slamtec RPLIDAR A3M1):
           - 360 deg horizontal FOV, single scan plane (2D)
-          - range: 0.05 m - 30 m
-          - sample rate: 32 kHz -> 2400 samples/rev @ 10 Hz keeps ~0.15 deg resolution
-          - scan rate: 10 Hz default (hardware supports up to 32 Hz)
+          - range: 0.2 m - 25 m
+          - sample rate: 16 kHz -> 1600 samples/rev @ 10 Hz keeps ~0.225 deg resolution
+          - scan rate: 10 Hz default (hardware supports 5-20 Hz)
       -->
-      <sensor name="rplidar_s2_sensor" type="gpu_lidar">
-        <pose>0 0 0.0404 0 0 0</pose>
+      <sensor name="rplidar_a3m1_sensor" type="gpu_lidar">
+        <pose>0 0 0.053 0 0 0</pose>
         <topic>scan</topic>
         <!--
           Pinned explicitly so LaserScan.header.frame_id always matches the
           static TF published in piazinho_rplidar.launch.py, regardless of
           how the sensor's scoped name changes once merge='true' flattens
           this sub-model into piazinho_rplidar. Mirrors how mid360 pins its
-          frame via <frame>livox_lidar</frame> on the RGL plugin.
+          frame via <frame>livox_lidar</frame> on the RGL plugin. Kept
+          model-name-agnostic so swapping the lidar model doesn't also
+          require touching every consumer's frame_id.
         -->
         <gz_frame_id>rplidar_frame</gz_frame_id>
         <update_rate>10</update_rate>
@@ -75,7 +77,7 @@
         <lidar>
           <scan>
             <horizontal>
-              <samples>2400</samples>
+              <samples>1600</samples>
               <resolution>1</resolution>
               <min_angle>-3.141592653589793</min_angle>
               <max_angle>3.141592653589793</max_angle>
@@ -88,8 +90,8 @@
             </vertical>
           </scan>
           <range>
-            <min>0.05</min>
-            <max>30.0</max>
+            <min>0.2</min>
+            <max>25.0</max>
             <resolution>0.01</resolution>
           </range>
           <noise>
