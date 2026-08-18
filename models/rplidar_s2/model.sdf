@@ -68,7 +68,7 @@
           this sub-model into piazinho_rplidar. Mirrors how mid360 pins its
           frame via <frame>livox_lidar</frame> on the RGL plugin.
         -->
-        <gz_frame_id>rplidar_s2/base_link</gz_frame_id>
+        <gz_frame_id>rplidar_frame</gz_frame_id>
         <update_rate>10</update_rate>
         <always_on>true</always_on>
         <visualize>true</visualize>
