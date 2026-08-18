@@ -13,10 +13,6 @@
       <child>livox_frame</child>
     </joint>
     <include merge='true'>
-      <uri>model://coisaruim_lidar</uri>
-      <pose>0.0 -0.117311 -0.046866 0 -1.5708 0</pose>
-    </include>
-    <include merge='true'>
       <uri>model://mono_cam</uri>
       <pose relative_to="base_link">0.1 0 0.05 0 0 0</pose>
     </include>

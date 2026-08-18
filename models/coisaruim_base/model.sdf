@@ -383,9 +383,9 @@
         <robot_base_frame>base_link</robot_base_frame>
         <odom_publish_frequency>50</odom_publish_frequency>
         <dimensions>3</dimensions>
-        
-        <odom_topic>/model/coisaruim_mid360_range_cam_0/odometry</odom_topic>
-        <odom_covariance_topic>/model/coisaruim_mid360_range_cam_0/ignored_gt_covariance</odom_covariance_topic>
+
+        <odom_topic>/model/coisaruim_mid360_0_range_cam_0/odometry</odom_topic>
+        <odom_covariance_topic>/model/coisaruim_mid360_0_range_cam_0/ignored_gt_covariance</odom_covariance_topic>
     </plugin>
 <!--
     <model name="payload_model">
