@@ -125,13 +125,13 @@
             <horizontal>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.00001</stddev> 
+                <stddev>0.00001</stddev>
               </noise>
             </horizontal>
             <vertical>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.1</stddev> 
+                <stddev>0.1</stddev>
               </noise>
             </vertical>
           </position_sensing>
@@ -139,23 +139,23 @@
             <horizontal>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.000001</stddev> 
+                <stddev>0.000001</stddev>
               </noise>
             </horizontal>
             <vertical>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.05</stddev> 
+                <stddev>0.05</stddev>
               </noise>
             </vertical>
           </velocity_sensing>
         </navsat>
       </sensor>
-      
+
     </link>
 
-    <link name="lidar_sensor_link">
-      <pose>0 0 -0.05 0 1.5708 0</pose> 
+    <!--<link name="lidar_sensor_link">
+      <pose>0 0 -0.05 0 1.5708 0</pose>
       <inertial>
         <mass>0.01</mass>
         <inertia>
@@ -191,13 +191,13 @@
           </noise>
         </ray>
       </sensor>
-    </link>
+    </link>-->
 
-    <joint name="lidar_joint" type="fixed">
+   <!-- <joint name="lidar_joint" type="fixed">
       <parent>base_link</parent>
       <child>lidar_sensor_link</child>
-    </joint>
-    
+    </joint>-->
+
     <link name="rotor_0">
       <gravity>true</gravity>
       <self_collide>false</self_collide>
@@ -465,7 +465,7 @@
             <iyy>0.001</iyy><iyz>0</iyz><izz>0.001</izz>
           </inertia>
         </inertial>
-        
+
         <!-- VISUAL -->
         <visual name="hook_visual">
           <pose>0 0 0 0 0 0</pose>
@@ -476,7 +476,7 @@
             </mesh>
           </geometry>
         </visual>
-        
+
         <collision name="hook_collision">
           <pose>0 0 0 0 0 0</pose>
           <geometry>
@@ -506,9 +506,9 @@
         <robot_base_frame>base_link</robot_base_frame>
         <odom_publish_frequency>50</odom_publish_frequency>
         <dimensions>3</dimensions>
-        
+
         <odom_topic>/model/piazinho_mid360_cam_0/odometry</odom_topic>
-        
+
       </plugin>
     </model>
 
@@ -518,6 +518,6 @@
       <child_link>payload_hook</child_link>
       <detach_topic>/sim/hook</detach_topic>
     </plugin>
-    
+
   </model>
 </sdf>
