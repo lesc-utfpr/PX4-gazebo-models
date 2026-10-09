@@ -81,7 +81,7 @@
         </collision>
       </link>
     </model>
-
+    <!--
     <model name="CBR26-base-clutter-roof">
       <static>true</static>
       <pose>7 5 1.54 0 0 0</pose>
@@ -107,7 +107,7 @@
         </collision>
       </link>
     </model>
-
+    -->
     <model name="fase4">
       <static>true</static>
       <link name="link">

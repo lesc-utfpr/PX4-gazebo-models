@@ -19,6 +19,8 @@
       <render_engine>ogre2</render_engine>
     </plugin>
 
+    <plugin filename="libRGLServerPluginManager.so" name="rgl::RGLServerPluginManager"/>
+
     <gui fullscreen="false">
       <plugin filename="MinimalScene" name="3D View">
         <gz-gui>
