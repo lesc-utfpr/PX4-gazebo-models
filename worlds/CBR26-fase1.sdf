@@ -235,6 +235,13 @@
       </link>
     </model>
 
+    <!-- colocar plano cinza embaixo da arena -->
+    <include>
+    <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    <name>piso</name>
+    <pose>0 0 -1.0 0 0 0</pose>
+    </include>
+
     <!-- user camera {-->
     <gui>
       <camera name="camera">
