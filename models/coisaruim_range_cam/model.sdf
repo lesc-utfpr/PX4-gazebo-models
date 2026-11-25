@@ -7,7 +7,7 @@
     </include>
     <include merge='true'>
       <uri>model://coisaruim_lidar</uri>
-      <pose>0.0 -0.117311 -0.046866 0 -1.5708 0</pose>
+      <pose relative_to="base_link">0.0 -0.117311 0.077389 0 1.57079632679 0</pose>
     </include>
     <joint name="lidar_joint" type="fixed">
       <parent>base_link</parent>
