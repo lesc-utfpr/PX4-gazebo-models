@@ -12,5 +12,13 @@
       <parent>base_link</parent>
       <child>rplidar_a3m1/base_link</child>
     </joint>
+    <include merge='true'>
+      <uri>model://piazinho_lidar</uri>
+      <pose relative_to="base_link">-0.058351 0.002478 0.077389 0 1.57079632679 0</pose>
+    </include>
+    <joint name="lidar_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>lidar_sensor_link</child>
+    </joint>
   </model>
 </sdf>

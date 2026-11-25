@@ -20,5 +20,13 @@
       <parent>base_link</parent>
       <child>mono_cam/base_link</child>
     </joint>
+    <include merge='true'>
+      <uri>model://coisaruim_lidar</uri>
+      <pose relative_to="base_link">0.0 -0.117311 0.077389 0 1.57079632679 0</pose>
+    </include>
+    <joint name="lidar_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>lidar_sensor_link</child>
+    </joint>
   </model>
 </sdf>
